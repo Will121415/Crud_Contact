@@ -73,7 +73,10 @@ class _MyHomePageState extends State<MyHomePage> {
               leading: CircleAvatar(
                 child: Text(clients[index].name.substring(0, 1)),
               ),
-              trailing: Icon(Icons.arrow_circle_up),
+              trailing: Icon(
+                Icons.call,
+                color: Colors.red,
+              ),
             );
           }),
 
@@ -118,12 +121,14 @@ class _MyHomePageState extends State<MyHomePage> {
       context: context,
       builder: (_) => AlertDialog(
         title: Text('Elimnar Cliente...!'),
-        content: Text('Esta Seguro de Eliminar' + client.name + '?'),
+        content: Text('Esta Seguro de eliminar a ' + client.name + '?'),
         actions: [
           TextButton(
             onPressed: () {
-              this.clients.remove(client);
-              Navigator.pop(context);
+              setState(() {
+                this.clients.remove(client);
+                Navigator.pop(context);
+              });
             },
             child: Text(
               'Eliminar',

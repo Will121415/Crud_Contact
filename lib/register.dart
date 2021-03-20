@@ -29,7 +29,10 @@ class _RegisterState extends State<Register> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Alert',
+      title: 'Register',
+      theme: ThemeData(
+        primarySwatch: Colors.green,
+      ),
       home: Scaffold(
         appBar: AppBar(
           title: Text(widget.titulo),

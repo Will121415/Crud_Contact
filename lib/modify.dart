@@ -28,7 +28,10 @@ class _ModifyState extends State<Modify> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'App',
+      title: 'Modify',
+      theme: ThemeData(
+        primarySwatch: Colors.green,
+      ),
       home: Scaffold(
         appBar: AppBar(
           title: Text('Modificar Contacto'),
